@@ -52,3 +52,39 @@ dog = Dog("Goofy")
 
 anm.speak()
 dog.speak()
+
+
+# Polymorphism
+# Allows you to write code that can work with objects of different classes in a
+# uniform way.
+# In python it is achieved by using method overriding and overloading
+#
+# Method overriding is when a subclass provides its own implementation of a method
+# defined in the parent class
+#
+# Method overloading is when multiple methods have the same name but different parameters.
+# Python does not support it directly, but it can be achieved using default arguments
+
+class Shape:
+    # Area is an abstract method, it is intended tobe overrriden
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14159 * self.radius ** 2
+
+shapes = [Rectangle(4, 5), Circle(8), Rectangle(9, 1) , Circle(2), Rectangle(3, 3)]
+for shape in shapes:
+    print(shape.area())
