@@ -29,3 +29,26 @@ print(obj._x)
 # It cannot be accessed
 # print(obj.w)
 
+
+# Inheritance
+
+class Animal:
+    def __init__(self, name):
+        # This is a public attribute
+        self.name = name
+        
+    def speak(self):
+        print(f'... {self.name}')
+
+# Subclass Dog that inherits from Animal
+class Dog(Animal):
+
+    # Override the speak method
+    def speak(self):
+        print(f'Woof! ... {self.name}')
+
+anm = Animal("Georgie")
+dog = Dog("Goofy")
+
+anm.speak()
+dog.speak()
