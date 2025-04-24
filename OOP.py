@@ -88,3 +88,29 @@ class Circle(Shape):
 shapes = [Rectangle(4, 5), Circle(8), Rectangle(9, 1) , Circle(2), Rectangle(3, 3)]
 for shape in shapes:
     print(shape.area())
+
+
+# Abstraction
+# It allows you to focus on essentian features of an object or system while ignoring
+# the details that aren't relevant to the current contex. By reducing complexity
+# and hiding unnecessary details, it can make code more modular, easier to read, and
+# easier to maintain.
+#
+# Abstraction can be achieved by using abstract classes or interfaces.
+# - An abstract class is a class that cannot be instantiated directly, but is meant
+#   to be subclassed by other classes. It provides a template for how the subclass should
+#   be implemented.
+# - An interface is a collection of method signatures that a class must implement in
+#   order to be considered compatible with the interface.
+#
+# Python does not have built-in support for abstact classes or interfaces, but they
+# can be implemented using the abc (abstract base class) module
+
+from abc import ABC, abstractmethod
+
+# The previous example of Shape can be like this
+# Define an abstract class and an abstract method
+class Shape2(ABC):
+    @abstractmethod
+    def area(self):
+        pass
